@@ -3,7 +3,7 @@ package interfaces;
 import java.util.ArrayList;
 
 // Object
-public class DynamicStack<T> extends TempClass implements StackInterface<T>  {
+public class GenericDynamicStack<T> extends TempClass implements StackInterface<T>  {
     // Stack works on the principle of Last In First Out (LIFO) (FILO)
     // If you have a stack that take max of 100 elements,
     // for first push, you insert the element at position 0
@@ -15,7 +15,7 @@ public class DynamicStack<T> extends TempClass implements StackInterface<T>  {
     private ArrayList<T> stack;
     private int top = -1;
 
-    public DynamicStack(int size) {
+    public GenericDynamicStack(int size) {
         stack = new ArrayList<T>(size);
     }
 
@@ -58,13 +58,8 @@ public class DynamicStack<T> extends TempClass implements StackInterface<T>  {
 //        fs.pop();
 
 //        System.out.println(fs.peek());
-        StackInterface<Integer> fs = new DynamicStack(100);
+        StackInterface<Integer> fs = new GenericDynamicStack(100);
         StackInterface.printSomething();
-
-        DynamicStack<Integer> ds = new DynamicStack<>(10);
-
-        DynamicStack<String> ss = new DynamicStack<>(20);
-
         // A is base class, B is derived class
 //        A a1 = new B(); // This is OK
 //        B b1 = new A(); // This is ERROR

@@ -1,26 +1,26 @@
 package interfaces;
 
-public interface StackInterface {
-    void push(int x); // Insert element on the top of the stack and increase top pointer
+public interface StackInterface<T> {
+    void push(T x); // Insert element on the top of the stack and increase top pointer
 
-    int pop() throws Exception; // Remove and return the element from top of the stack and decrease the top pointer
+    T pop() throws Exception; // Remove and return the element from top of the stack and decrease the top pointer
 
     int size(); // Return size of the stack
 
-    int peek(); // Return the value of the top of the stack
+    T peek(); // Return the value of the top of the stack
 
     // Add a default method that pops N elements
-    default int [] popNElements(int n) {
-        int [] elements = new int[n];
-        try {
-            for (int i = 0; i < n; i++) {
-                elements[i] = pop();
-            }
-        } catch(Exception ex) {
-            System.out.println("Received exception while handling pops");
-        }
-        return elements;
-    }
+//    default T [] popNElements(T n) {
+//        int [] elements = new int[n];
+//        try {
+//            for (int i = 0; i < n; i++) {
+//                elements[i] = pop();
+//            }
+//        } catch(Exception ex) {
+//            System.out.println("Received exception while handling pops");
+//        }
+//        return elements;
+//    }
 
     // Add a private method that gets N elements
 //    private int [] getNElements(int n) {

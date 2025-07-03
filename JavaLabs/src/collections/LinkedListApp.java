@@ -1,17 +1,34 @@
 package collections;
 
-public class LinkedListDemo {
+public class LinkedListApp {
     private LinkedListNode head;
 
+    public void addNode(String s) {
+        if (head == null) {
+            head = new LinkedListNode(s);
+        } else {
+            LinkedListNode node = new LinkedListNode(s);
+            node.next = head;
+            head = node;
+        }
+    }
 
+    public LinkedListNode getNthNode(int n) {
+        if (head == null) {
+            return null;
+        }
+        LinkedListNode temp = head;
+
+        for (int i=1; i<n; i++) {
+            if (temp.next == null) {
+                return null;
+            }
+            temp = temp.next;
+        }
+        return temp;
+    }
 
     public static void main(String []args) {
-        LinkedListNode node2 = new LinkedListNode("Teja");
-        LinkedListNode node3 = new LinkedListNode("Pandu");
-        LinkedListNode node4 = new LinkedListNode("Usha");
-        LinkedListNode node5 = new LinkedListNode("Amrutha");
 
-        LinkedListNode head = new LinkedListNode("Rama");
-        head.addNode(node2);
     }
 }

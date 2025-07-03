@@ -43,6 +43,16 @@ public class ArrayListDemo {
         groceryStores1.add("Patel Brothers");
         groceryStores1.add("Walmart");
 
+        // Pandu => TreeMap
+        // Usha => LinkedHashMap
+        // Amrutha => ArrayList
+
+        // Style 1
+        for(int i=0; i < groceryStores1.size(); i++) {
+            System.out.println(groceryStores1.get(i));
+        }
+
+        // Style 2
 
         // Order of Complexity => Space Complexity, Time Complexity
         // ArrayList of 1 Million numbers
